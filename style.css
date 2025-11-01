@@ -1,9 +1,17 @@
 .logo{
-    width: 240px;
-    height: 150px;
+    width: 270px;
+    height: 65px;
+    background-color: black;
 }
 
 .flowers{
    width:150px;
    height:150px;
+}
+
+.ff{
+    background-color: black;
+}
+.fog{ 
+    background-color: black;
 }
