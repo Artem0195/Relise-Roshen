@@ -31,7 +31,7 @@ async function getProducts() {
 
 function getCardHTML(product) {
     return `<div class="card" style="width: 18rem;">
-  <img src="${product.image}" class="card-img-top" alt="...">
+  <img src="img/${product.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
     <p class="card-text">${product.description}</p>
@@ -39,28 +39,42 @@ function getCardHTML(product) {
   </div>
 </div>`
 }
-
 class ShoppingCart {
-    constructor() {
-        this.loadCartFromCookies
-        this.items = {} // об’єкт з товарами у кошику
-        this.total = 0  // загальна вартість замовлення
+  constructor() {
+    this.items = {}; // об’єкт з товарами у кошику
+    this.total = 0; // загальна вартість замовлення
+  }
+
+
+  addItem(item) {
+    // Додавання товару до кошика
+    if (this.items[item.title]) {
+      this.items[item.title].quantity += 1;
+    } else {
+      this.items[item.title] = item;
+      this.items[item.title].quantity = 1;
     }
+    this.saveCartToCookies();
+    console.log(this.items);
+  }
+
+
+  saveCartToCookies() {
+    // збереження кошика у кукі
+    let cartJSON = JSON.stringify(this.items);
+    document.cookie = `cart=${cartJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
+  }
+
+
+  loadCartFromCookies() {
+    // Завантаження кошика з кукі
+    let cartCookie = getCookieValue("cart");
+    if (cartCookie && cartCookie !== "") {
+      this.items = JSON.parse(cartCookie);
+    }
+  }
 }
 
-    addItem(item) { // Додавання товару до кошика 
-    if(this.items[item.title])
-    {this.items[item.title].quantity +=1
-
-    } else{this.items[item.title]=item
-        this.items[item.title].quantity=1  }
-    	
-    saveCartToCookies() { // збереження кошика у кукі
-    }
-
-    loadCartFromCookies() { // Завантаження кошика з кукі
-    }
-}
 let cart = new ShoppingCart() // Створення об'єкта кошика
 
 

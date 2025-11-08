@@ -1,6 +1,6 @@
 .logo{
-    width: 200px;
-    height: 105px;
+    width:240px;
+    height: 75px;
     background-color: black;
 }
 
@@ -9,3 +9,6 @@
    height:150px;
 }
 
+header{
+    background-color: black
+}
