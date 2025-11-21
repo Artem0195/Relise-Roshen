@@ -1,14 +1,42 @@
-.logo{
-    width:240px;
-    height: 75px;
-    background-color: black;
+.logo {
+  width: 240px;
+  height: 75px;
+  background-color: black;
 }
 
-.flowers{
-   width:150px;
-   height:150px;
+.flowers {
+  width: 150px;
+  height: 150px;
 }
 
-header{
-    background-color: black
+header {
+  background-color: black;
+  color: #ffffff;
+}
+
+.products-list {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #ffffff;
+  padding: 10px;
+}
+.conteiner {
+  padding: 20px;
+}
+
+.order {
+  display: none;
+}
+
+.card-price {
+  font-weight: bold;
+  color: rgb(2, 2, 2);
+  font-size: 18px;
+  font-weight: 500;
 }
