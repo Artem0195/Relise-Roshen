@@ -141,7 +141,7 @@ function get_item(item) {
           <div class="cart-item-quantity">Кількість: ${item.quantity}</div>
                 <div class="cart-item-price" data-price="${item.price}">${
     item.price * item.quantity
-  } $</div>
+  } грн</div>
       </div>
     </div>
   </div>
